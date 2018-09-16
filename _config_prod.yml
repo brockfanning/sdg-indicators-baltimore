@@ -1,0 +1,98 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Proof of concept - Baltimore and SDG Indicators
+description: Data Platform Prototype
+baseurl: "" # the subpath of your site, e.g. /blog
+url: ""
+data_dir: data
+environment: staging
+remotedatabaseurl: "http://brock.tips/sdg-data-baltimore"
+# permalink: /news/:year/:month/:day/:title.html
+
+jekyll_get_data:
+  - data: meta
+    json: 'http://brock.tips/sdg-data-baltimore/meta/all.json'
+    # cache: true
+    # directory: 'remotedata'
+  - data: headlines
+    json: 'http://brock.tips/sdg-data-baltimore/headline/all.json'
+    # cache: true
+    # directory: 'remotedata'
+  - data: schema
+    json: 'http://brock.tips/sdg-data-baltimore/meta/schema.json'
+  - data: translations
+    json: 'http://brock.tips/sdg-translations/translations.json'
+
+analytics:
+  ga_prod: ''
+
+###################################################################################################
+email_contacts:
+  questions: brockfanning@gmail.com
+  suggestions: brockfanning@gmail.com
+  functional: brockfanning@gmail.com
+###################################################################################################
+
+# Github Repo for Data
+repo_name: sdg-data-baltimore
+branch: develop
+org_name: brockfanning
+
+# Build settings
+markdown: kramdown
+
+# Travis Support
+exclude: [vendor, scripts, remotedata]
+
+# International Support
+# Eg name: Australia and adjective: Australian
+country:
+  name: Baltimore
+  adjective: Baltimorean
+
+# Pages
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  posts:
+    output: true
+    permalink: /news/:year/:month/:day/:title.html
+  indicators:
+    output: true
+  goals:
+    output: true
+
+# Menu
+menu:
+  - path: /reporting-status
+    translation_key: reporting_status
+  - path: /about
+    translation_key: about
+  - path: /guidance
+    translation_key: guidance
+  - path: /faq
+    translation_key: faq
+
+# The list of languages that are translated. The first one is the default.
+languages:
+  - en
+
+# This makes sure that all pages have a language.
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      language: "en"
+
+plugins:
+  - jekyll-remote-theme
+
+remote_theme: brockfanning/sdg-theme@multilingual
