@@ -7,6 +7,13 @@ module Jekyll_Get_Data
     safe true
     priority :highest
 
+    class ::Hash
+      def deep_merge(second)
+        merger = proc { |key, v1, v2| Hash === v1 && Hash === v2 ? v1.merge(v2, &merger) : v2 }
+        self.merge(second, &merger)
+      end
+    end
+
     def generate(site)
 
       config = site.config['jekyll_get_data']
@@ -24,7 +31,7 @@ module Jekyll_Get_Data
           source = JSON.load(open(d['json']))
 
           if target
-            HashJoiner.deep_merge target, source
+            site.data[d['data']] = source.deep_merge(target)
           else
             site.data[d['data']] = source
           end
