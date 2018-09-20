@@ -21,7 +21,14 @@
     "goal": {
       "id": "3",
       "title": "Ensure healthy lives and promote well-being for all at all ages",
-      "indicators": []
+      "indicators": [{
+          "id": "3-2-2",
+          "title": "Neonatal mortality rate",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators-baltimore/3-2-2",
+          "status": "complete"
+        }]
     }
   },{
     "goal": {
