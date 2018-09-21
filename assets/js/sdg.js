@@ -1091,7 +1091,7 @@ var mapView = function () {
       geoCodeRegEx: geoCodeRegEx,
       serviceUrl: '/sdg-indicators-baltimore/Maryland_Baltimore_City_Neighborhoods.geojson',
       nameProperty: 'LABEL',
-      idProperty: 'LABEL',
+      idProperty: 'OBJECTID',
       width: 710,
       height: 400,
     });
