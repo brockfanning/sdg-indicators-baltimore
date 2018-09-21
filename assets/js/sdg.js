@@ -1089,11 +1089,11 @@ var mapView = function () {
     $('#map').sdgMap({
       geoData: geoData,
       geoCodeRegEx: geoCodeRegEx,
-      serviceUrl: 'http://brock.tips/sdg-indicators-baltimore/baltimore.geo.json',
+      serviceUrl: '/sdg-indicators-baltimore/Maryland_Baltimore_City_Neighborhoods.geojson',
       nameProperty: 'LABEL',
       idProperty: 'LABEL',
       width: 710,
-      height: 350,
+      height: 400,
     });
   }
 };
