@@ -2,14 +2,7 @@
     "goal": {
       "id": "1",
       "title": "End poverty in all its forms everywhere",
-      "indicators": [{
-          "id": "1-1-a",
-          "title": "Number of homeless persons",
-          "description": "",
-          "keywords": "",
-          "href": "/sdg-indicators-baltimore/1-1-a",
-          "status": "complete"
-        }]
+      "indicators": []
     }
   },{
     "goal": {
